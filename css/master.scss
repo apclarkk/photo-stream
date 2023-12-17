@@ -11,7 +11,7 @@
 
 @mixin dark {
 	@media (prefers-color-scheme: dark) {
-		@content
+		@content;
 	}
 }
 
@@ -26,34 +26,32 @@
 	background-repeat: no-repeat;
 	background-position: 8px;
 	background-size: 16px;
-	transition: background-color .1s linear;
+	transition: background-color 0.1s linear;
 	-webkit-backdrop-filter: blur(20px);
 	-moz-backdrop-filter: blur(20px);
 	backdrop-filter: blur(20px);
-	background-color: rgba(200, 200, 200, .25);
+	background-color: rgba(200, 200, 200, 0.25);
 	// Disable until Safari supports `prefers-color-scheme` in SVG's
 	// @include dark {
 	// 	background-color: rgba(0, 0, 0, .25);
 	// }
-	
+
 	&:hover,
 	&:focus {
-		background-color: rgba(200, 200, 200, .5);
+		background-color: rgba(200, 200, 200, 0.5);
 		// Disable until Safari supports `prefers-color-scheme` in SVG's
 		// @include dark {
 		// 	background-color: rgba(0, 0, 0, .5);
 		// }
 	}
-	
+
 	&:active {
-		background-color: rgba(200, 200, 200, .25);
+		background-color: rgba(200, 200, 200, 0.25);
 		// Disable until Safari supports `prefers-color-scheme` in SVG's
 		// @include dark {
 		// 	background-color: rgba(0, 0, 0, .75);
 		// }
 	}
-	
-	
 }
 
 body,
@@ -64,7 +62,9 @@ html {
 
 body {
 	flex-grow: 1;
-	font: 16px/24px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	font: 16px/24px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+		"Segoe UI Symbol";
 	background: #fff;
 	color: #2e2f30;
 
@@ -83,16 +83,16 @@ body {
 	align-content: flex-start;
 
 	&:after {
-    content: "";
-    display: block;
-    flex-grow: 10;
+		content: "";
+		display: block;
+		flex-grow: 10;
 		outline: 2px solid #fff;
 		position: relative;
 
 		@include dark {
 			outline-color: #000;
 		}
-  }
+	}
 
 	.item {
 		height: 40vh;
@@ -129,15 +129,15 @@ body {
 		.open {
 			cursor: zoom-in;
 			background-color: rgba(0, 0, 0, 0);
-			transition: background-color .15s ease-out;
+			transition: background-color 0.15s ease-out;
 
 			&:hover,
 			&:focus {
-				background-color: rgba(0, 0, 0, .25);
+				background-color: rgba(0, 0, 0, 0.25);
 			}
 
 			&:active {
-				background-color: rgba(0, 0, 0, .5);
+				background-color: rgba(0, 0, 0, 0.5);
 			}
 		}
 
@@ -161,17 +161,17 @@ body {
 			display: none;
 			align-items: center;
 			justify-content: center;
-			
+
 			span {
 				@include button;
 				background-image: url(../img/icon-left.svg);
 				pointer-events: none;
 			}
-			
+
 			&:hover,
 			&:focus {
 				span {
-					background-color: rgba(200, 200, 200, .5);
+					background-color: rgba(200, 200, 200, 0.5);
 					// Disable until Safari supports `prefers-color-scheme` in SVG's
 					// @include dark {
 					// 	background-color: rgba(0, 0, 0, .5);
@@ -181,7 +181,7 @@ body {
 
 			&:active {
 				span {
-					background-color: rgba(200, 200, 200, .25);
+					background-color: rgba(200, 200, 200, 0.25);
 					// Disable until Safari supports `prefers-color-scheme` in SVG's
 					// @include dark {
 					// 	background-color: rgba(0, 0, 0, .75);
@@ -193,7 +193,7 @@ body {
 		.next {
 			right: 0;
 			left: auto;
-			
+
 			span {
 				background-image: url(../img/icon-right.svg);
 			}
@@ -206,13 +206,13 @@ body {
 			bottom: 12px;
 			color: #fff;
 			text-shadow: #000 0 1px 1px, #000 0 2px 4px;
-			opacity: .5;
-		
+			opacity: 0.5;
+
 			li {
 				margin-right: 12px;
 			}
 		}
-		
+
 		// PHOTO DETAIL
 
 		&.target {
@@ -241,7 +241,7 @@ body {
 
 			img {
 				object-fit: contain;
-				animation: fade-in .5s ease-out;
+				animation: fade-in 0.5s ease-out;
 			}
 
 			.full {
@@ -251,8 +251,8 @@ body {
 				right: 0;
 				bottom: 0;
 				left: 0;
-				animation: fade-in .5s ease-out;
-				
+				animation: fade-in 0.5s ease-out;
+
 				span {
 					flex-grow: 1;
 					background-size: contain;
@@ -282,27 +282,28 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	margin-left: 16px;
-	
+
 	li {
 		margin-left: 8px;
-		
+
 		a {
 			@include button;
 		}
-		
+
 		&.github {
 			a {
 				background-image: url(../img/icon-github.svg);
 			}
 		}
-		
+
 		&.rss {
 			a {
 				background-image: url(../img/icon-rss.svg);
 			}
 		}
-		
+
 		&.link {
+			span,
 			a {
 				text-indent: 0;
 				width: auto;
@@ -310,7 +311,7 @@ body {
 				line-height: 32px;
 				text-transform: uppercase;
 				padding: 0 12px;
-				color: rgba(0, 0, 0, .75);
+				color: rgba(0, 0, 0, 0.75);
 				font-weight: 600;
 				text-decoration: none;
 			}
@@ -329,23 +330,23 @@ body {
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	
+
 	img {
 		width: 64px;
 		vertical-align: bottom;
 		margin-bottom: 24px;
 	}
-	
+
 	h1 {
 		font-size: 32px;
 		line-height: 48px;
 		font-weight: 700;
 	}
-	
+
 	p {
 		margin-bottom: 32px;
 	}
-	
+
 	a {
 		@include button;
 		text-indent: 0;
@@ -354,7 +355,7 @@ body {
 		line-height: 32px;
 		text-transform: uppercase;
 		padding: 0 12px;
-		color: rgba(0, 0, 0, .75);
+		color: rgba(0, 0, 0, 0.75);
 		font-weight: 600;
 		text-decoration: none;
 	}
@@ -390,21 +391,21 @@ body {
 				width: 100%;
 				height: auto;
 			}
-			
+
 			.previous,
 			.next {
 				width: 25vw;
 				max-width: auto;
-				
+
 				span {
 					display: none;
 				}
 			}
-			
+
 			.previous {
 				cursor: w-resize;
 			}
-			
+
 			.next {
 				cursor: e-resize;
 			}
@@ -415,10 +416,10 @@ body {
 // ANIMATIONS
 
 @keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
