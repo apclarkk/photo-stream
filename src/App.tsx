@@ -30,7 +30,7 @@ export default function App() {
 				<PhotoAlbum
 					photos={photos}
 					layout="masonry"
-					spacing={5}
+					spacing={4}
 					columns={(containerWidth) => {
 						if (containerWidth < 800) return 2;
 						if (containerWidth < 1000) return 3;

@@ -19,7 +19,7 @@ body {
 	cursor: zoom-in !important;
 }
 .photo-album-wrapper {
-	/* background-color: #f5f2e5; */
+	background-color: #f5f2e5;
 	border: 4px solid #f5f2e5;
 	border-top: 0;
 }

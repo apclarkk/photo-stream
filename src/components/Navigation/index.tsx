@@ -9,7 +9,7 @@ import { useMediaQuery } from "react-responsive";
 
 const Header = styled.header`
 	position: fixed;
-	width: ${(props) => (props.theme.isTabletOrMobile ? "95.5%" : "98.9%")};
+	width: ${(props) => (props.theme.isTabletOrMobile ? "95.5%" : "98.65%")};
 	margin-right: 10px;
 	height: max-content;
 	top: 0px;
