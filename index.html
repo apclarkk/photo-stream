@@ -1,34 +1,58 @@
----
----
-
 <!DOCTYPE html>
-<html>
-	{% include head.html %}
-	<body>
-		{% assign target = "target" %}
-		<ul class="grid" id="{{ target }}">
-			{% assign images = page.images | default: site.static_files |
-			photo_filter %} {% include photos.html %}
-		</ul>
-		<ul class="links">
-			<li class="link"><a>Pentax P3</a></li>
-			<li class="link"><a>Bronica ETRS</a></li>
-			<li class="link">
-				<a
-					rel="me"
-					href="https://instagram.com/{{ site.instagram_username }}"
-					title="@{{ site.instagram_username }} on Instagram"
-					>Instagram</a
-				>
-			</li>
-		</ul>
-		{% include javascript.html %} {% if page.image_slug %}
-		<script
-			src="{{ '/js/photos.js' | relative_url }}"
-			data-photo-id="{{ page.image_slug }}"
-			data-photo-url="{{ page.image_slug | relative_url }}"
-			data-target-id="{{ target }}"
-		></script>
-		{% endif %}
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="title"
+			property="og:title"
+			content="Andrew Clark: Front-end Developer & Wanna-be Photographer"
+		/>
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#000000" />
+		<meta
+			name="description"
+			property="og:description"
+			content="Andrew Clark's Photography Portfolio"
+		/>
+		<link rel="apple-touch-icon" href="/logo192.png" />
+		<link rel="manifest" href="/manifest.json" />
+		<meta name="author" content="Andrew P Clark" />
+
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="/site.webmanifest" />
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+		<meta name="msapplication-TileColor" content="#da532c" />
+		<meta name="theme-color" content="#f4f2e5" />
+		<meta property="og:image:width" content="1146" />
+		<meta property="og:image:height" content="600" />
+		<meta property="og:url" content="https://www.apclark.photos" />
+		<meta
+			property="og:image"
+			content="https://www.apclark.org/og-image.jpg"
+		/>
+	</head>
+	<body class="active">
+		<div id="main-wrap">
+			<noscript>You need to enable JavaScript to run this app.</noscript>
+			<div id="root"></div>
+		</div>
 	</body>
 </html>
+<script type="module" src="/src/main.tsx"></script>

@@ -1,0 +1,43 @@
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+		"Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+		"Helvetica Neue", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-color: #23272d;
+	padding: 117px 10px 0;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.react-photo-album--photo:hover {
+	transition: all 0.2s ease-in-out;
+	filter: brightness(0.8);
+	cursor: zoom-in !important;
+}
+.photo-album-wrapper {
+	/* background-color: #f5f2e5; */
+	border: 4px solid #f5f2e5;
+	border-top: 0;
+}
+
+@media all and (min-width: 300px) {
+	main {
+		padding: 10px;
+	}
+}
+
+@media all and (min-width: 600px) {
+	main {
+		padding: 15px;
+	}
+}
+
+@media all and (min-width: 1200px) {
+	main {
+		padding: 20px;
+	}
+}

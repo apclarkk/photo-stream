@@ -1,0 +1,21 @@
+/* Bold - 300 */
+@font-face {
+	font-family: "Avant Garde";
+	src: local("Avant Garde"),
+		url(./assets/fonts/ITCAvantGardeStd-Bk.otf) format("opentype");
+	font-weight: 300;
+}
+/* Medium - 500 */
+@font-face {
+	font-family: "Avant Garde";
+	src: local("Avant Garde"),
+		url(./assets/fonts/ITCAvantGardeStd-Md.otf) format("opentype");
+	font-weight: 500;
+}
+/* Bold - 600 */
+@font-face {
+	font-family: "Avant Garde";
+	src: local("Avant Garde"),
+		url(./assets/fonts/ITCAvantGardeStd-Demi.otf) format("opentype");
+	font-weight: 600;
+}
