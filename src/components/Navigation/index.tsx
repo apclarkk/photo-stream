@@ -118,6 +118,7 @@ export const Navigation = () => {
 							className={
 								isTabletOrMobile ? "name-tag-short" : "name-tag"
 							}
+							// @ts-ignore
 							overlap
 						>
 							{isTabletOrMobile ? (
